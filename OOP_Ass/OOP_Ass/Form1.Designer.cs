@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtSampling = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // txtSampling
+            // 
+            this.txtSampling.Location = new System.Drawing.Point(93, 92);
+            this.txtSampling.Name = "txtSampling";
+            this.txtSampling.Size = new System.Drawing.Size(100, 20);
+            this.txtSampling.TabIndex = 0;
+            this.txtSampling.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.txtSampling);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtSampling;
     }
 }
 
