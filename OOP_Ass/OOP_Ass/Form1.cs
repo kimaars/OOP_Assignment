@@ -26,5 +26,30 @@ namespace OOP_Ass
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSampling_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtSensor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogging_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

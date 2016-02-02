@@ -94,6 +94,7 @@
             this.btnSampling.TabIndex = 2;
             this.btnSampling.Text = "Sampling";
             this.btnSampling.UseVisualStyleBackColor = true;
+            this.btnSampling.Click += new System.EventHandler(this.btnSampling_Click);
             // 
             // grpSampling
             // 
@@ -128,6 +129,7 @@
             this.btnLogging.TabIndex = 2;
             this.btnLogging.Text = "Logging on file";
             this.btnLogging.UseVisualStyleBackColor = true;
+            this.btnLogging.Click += new System.EventHandler(this.btnLogging_Click);
             // 
             // txtLogging
             // 
@@ -172,19 +174,22 @@
             this.txtSensor.Name = "txtSensor";
             this.txtSensor.Size = new System.Drawing.Size(120, 194);
             this.txtSensor.TabIndex = 0;
+            this.txtSensor.TextChanged += new System.EventHandler(this.txtSensor_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 285);
+            this.ClientSize = new System.Drawing.Size(439, 327);
             this.Controls.Add(this.grpSensor);
             this.Controls.Add(this.grpLogging);
             this.Controls.Add(this.grpSampling);
             this.Controls.Add(this.mnuStrip);
             this.MainMenuStrip = this.mnuStrip;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Text = "DAQ Simulator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.mnuStrip.ResumeLayout(false);
             this.mnuStrip.PerformLayout();
             this.grpSampling.ResumeLayout(false);

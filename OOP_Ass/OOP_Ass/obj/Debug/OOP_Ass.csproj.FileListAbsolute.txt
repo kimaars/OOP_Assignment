@@ -1,1 +1,9 @@
 C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\bin\Debug\OOP_Ass.exe.config
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\bin\Debug\OOP_Ass.exe
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\bin\Debug\OOP_Ass.pdb
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.csprojResolveAssemblyReference.cache
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.Form1.resources
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.Properties.Resources.resources
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.csproj.GenerateResource.Cache
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.exe
+C:\Users\Kim\Documents\GitHub\OOP_Assignment\OOP_Ass\OOP_Ass\obj\Debug\OOP_Ass.pdb
