@@ -38,7 +38,6 @@
             this.grpSampling = new System.Windows.Forms.GroupBox();
             this.lblSampling = new System.Windows.Forms.Label();
             this.grpLogging = new System.Windows.Forms.GroupBox();
-            this.txtLogCount = new System.Windows.Forms.TextBox();
             this.lblNoLogging = new System.Windows.Forms.Label();
             this.lblLogging = new System.Windows.Forms.Label();
             this.btnLogging = new System.Windows.Forms.Button();
@@ -48,6 +47,9 @@
             this.tmrSampling = new System.Windows.Forms.Timer(this.components);
             this.tmrLogging = new System.Windows.Forms.Timer(this.components);
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblLogPath = new System.Windows.Forms.Label();
+            this.lblNoLog = new System.Windows.Forms.Label();
+            this.lblFileName = new System.Windows.Forms.Label();
             this.mnuStrip.SuspendLayout();
             this.grpSampling.SuspendLayout();
             this.grpLogging.SuspendLayout();
@@ -128,35 +130,28 @@
             // 
             // grpLogging
             // 
-            this.grpLogging.Controls.Add(this.txtLogCount);
+            this.grpLogging.Controls.Add(this.lblFileName);
+            this.grpLogging.Controls.Add(this.lblNoLog);
+            this.grpLogging.Controls.Add(this.lblLogPath);
             this.grpLogging.Controls.Add(this.lblNoLogging);
             this.grpLogging.Controls.Add(this.lblLogging);
             this.grpLogging.Controls.Add(this.btnLogging);
             this.grpLogging.Controls.Add(this.txtLogging);
             this.grpLogging.Location = new System.Drawing.Point(24, 168);
             this.grpLogging.Name = "grpLogging";
-            this.grpLogging.Size = new System.Drawing.Size(245, 147);
+            this.grpLogging.Size = new System.Drawing.Size(245, 185);
             this.grpLogging.TabIndex = 4;
             this.grpLogging.TabStop = false;
             this.grpLogging.Text = "Logging";
-            // 
-            // txtLogCount
-            // 
-            this.txtLogCount.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLogCount.Location = new System.Drawing.Point(116, 113);
-            this.txtLogCount.Name = "txtLogCount";
-            this.txtLogCount.Size = new System.Drawing.Size(31, 20);
-            this.txtLogCount.TabIndex = 8;
-            this.txtLogCount.TextChanged += new System.EventHandler(this.txtLogCount_TextChanged);
             // 
             // lblNoLogging
             // 
             this.lblNoLogging.AutoSize = true;
             this.lblNoLogging.Location = new System.Drawing.Point(6, 116);
             this.lblNoLogging.Name = "lblNoLogging";
-            this.lblNoLogging.Size = new System.Drawing.Size(93, 13);
+            this.lblNoLogging.Size = new System.Drawing.Size(96, 13);
             this.lblNoLogging.TabIndex = 7;
-            this.lblNoLogging.Text = "Number of logging";
+            this.lblNoLogging.Text = "Number of logging:";
             this.lblNoLogging.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblLogging
@@ -220,11 +215,40 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // lblLogPath
+            // 
+            this.lblLogPath.AutoSize = true;
+            this.lblLogPath.Location = new System.Drawing.Point(6, 151);
+            this.lblLogPath.Name = "lblLogPath";
+            this.lblLogPath.Size = new System.Drawing.Size(70, 13);
+            this.lblLogPath.TabIndex = 9;
+            this.lblLogPath.Text = "Logfile name:";
+            this.lblLogPath.Click += new System.EventHandler(this.lblLogPath_Click);
+            // 
+            // lblNoLog
+            // 
+            this.lblNoLog.AutoSize = true;
+            this.lblNoLog.Location = new System.Drawing.Point(106, 116);
+            this.lblNoLog.Name = "lblNoLog";
+            this.lblNoLog.Size = new System.Drawing.Size(35, 13);
+            this.lblNoLog.TabIndex = 10;
+            this.lblNoLog.Text = "label1";
+            this.lblNoLog.Click += new System.EventHandler(this.lblNoLog_Click);
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Location = new System.Drawing.Point(82, 151);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(35, 13);
+            this.lblFileName.TabIndex = 11;
+            this.lblFileName.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 327);
+            this.ClientSize = new System.Drawing.Size(520, 365);
             this.Controls.Add(this.grpSensor);
             this.Controls.Add(this.grpLogging);
             this.Controls.Add(this.grpSampling);
@@ -266,8 +290,10 @@
         private System.Windows.Forms.Timer tmrSampling;
         private System.Windows.Forms.Timer tmrLogging;
         private System.Windows.Forms.Label lblNoLogging;
-        private System.Windows.Forms.TextBox txtLogCount;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Label lblLogPath;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.Label lblNoLog;
     }
 }
 

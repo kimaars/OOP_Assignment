@@ -14,26 +14,27 @@ namespace OOP_Ass
     public partial class Form1 : Form
     {
         double timeLeftSampling = 1.5;
-        double timeLeftLogging = 4.0;
+        double timeLeftLogging = 49.0;
         int counter;
         int senAnalog = 5;
         int senDigital = 2;
         string sTxt;
         private Sensor[] sObj;
         int LogCount = 0;
-        
+        string filename;
 
         public Form1()
         {
             InitializeComponent();
-            // Create an array of sensor objects
+           
             sObj = new Sensor[senDigital+senAnalog];
             for (counter = 0; counter < senAnalog+senDigital; counter++)
             {
                 sObj[counter] = new Sensor(counter);
             }
-
-            
+            filename = "log.txt";
+            lblFileName.Text = filename;
+            lblNoLog.Text = LogCount.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -68,12 +69,13 @@ namespace OOP_Ass
         private void btnLogging_Click(object sender, EventArgs e)
         {
             LogCount++;
-            txtLogCount.Text = LogCount.ToString();
+            lblNoLog.Text = LogCount.ToString();
             tmrLogging.Start();
-            using (StreamWriter writer = File.AppendText("logfile.txt"))
+            using (StreamWriter writer = File.AppendText(filename))
             {
                 writer.Write(sTxt);
             }
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -124,10 +126,9 @@ namespace OOP_Ass
             else
             {
                 tmrLogging.Stop();
-                txtLogging.Text = "0";
                 btnLogging.Enabled = true;
                 txtLogging.Text = "Next Logging";
-                timeLeftLogging = 4.0;
+                timeLeftLogging = 49.0;
             }
         }
 
@@ -149,6 +150,21 @@ namespace OOP_Ass
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This is a DAQ Simulator ","About", System.Windows.Forms.MessageBoxButtons.OK);
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lblLogPath_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNoLog_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
