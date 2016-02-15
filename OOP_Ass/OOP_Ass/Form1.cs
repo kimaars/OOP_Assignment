@@ -89,16 +89,20 @@ namespace OOP_Ass
             else
             {
                 string time = DateTime.Now.ToLongTimeString();
+                string value = null;
                 tmrSampling.Stop();
                 txtSampling.Text = "Next Sample" ;
                 for (int i = 0; i < senAnalog; i++)
                 {
-                    sTxt += sObj[i].GetSenId().ToString() +"\t" + sObj[i].GetValue(false).ToString("F3")+"\t"+time+"\t"+"Analog"+"\r\n";
+                    value = sObj[i].GetValue(false).ToString("F3");
+                    value = value.Replace(",", ".");
+                    sTxt += sObj[i].GetSenId().ToString() +"," + value +","+time+","+"Analog"+"\r\n";
                 }
                 for (int j = senAnalog; j < senAnalog+senDigital; j++)
                 {
-                    sTxt += sObj[j].GetSenId().ToString() + "\t" + sObj[j].GetValue(true).ToString("F3") + "\t" + time +"\t" + "Digital"+"\r\n";
+                    sTxt += sObj[j].GetSenId().ToString() + "," + sObj[j].GetValue(true).ToString("F3") + "," + time +"," + "Digital"+"\r\n";
                 }
+
                 txtSensor.Text = sTxt;
                 btnSampling.Enabled = true;
                 timeLeftSampling = 1.5;
@@ -140,6 +144,11 @@ namespace OOP_Ass
         private void txtLogCount_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a DAQ Simulator ","About", System.Windows.Forms.MessageBoxButtons.OK);
         }
     }
 }
