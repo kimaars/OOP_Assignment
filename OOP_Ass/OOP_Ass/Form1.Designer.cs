@@ -38,6 +38,8 @@
             this.grpSampling = new System.Windows.Forms.GroupBox();
             this.lblSampling = new System.Windows.Forms.Label();
             this.grpLogging = new System.Windows.Forms.GroupBox();
+            this.txtLogCount = new System.Windows.Forms.TextBox();
+            this.lblNoLogging = new System.Windows.Forms.Label();
             this.lblLogging = new System.Windows.Forms.Label();
             this.btnLogging = new System.Windows.Forms.Button();
             this.txtLogging = new System.Windows.Forms.TextBox();
@@ -67,7 +69,7 @@
             this.helpToolStripMenuItem});
             this.mnuStrip.Location = new System.Drawing.Point(0, 0);
             this.mnuStrip.Name = "mnuStrip";
-            this.mnuStrip.Size = new System.Drawing.Size(439, 24);
+            this.mnuStrip.Size = new System.Drawing.Size(520, 24);
             this.mnuStrip.TabIndex = 1;
             this.mnuStrip.Text = "menuStrip1";
             // 
@@ -123,15 +125,36 @@
             // 
             // grpLogging
             // 
+            this.grpLogging.Controls.Add(this.txtLogCount);
+            this.grpLogging.Controls.Add(this.lblNoLogging);
             this.grpLogging.Controls.Add(this.lblLogging);
             this.grpLogging.Controls.Add(this.btnLogging);
             this.grpLogging.Controls.Add(this.txtLogging);
             this.grpLogging.Location = new System.Drawing.Point(24, 168);
             this.grpLogging.Name = "grpLogging";
-            this.grpLogging.Size = new System.Drawing.Size(245, 105);
+            this.grpLogging.Size = new System.Drawing.Size(245, 147);
             this.grpLogging.TabIndex = 4;
             this.grpLogging.TabStop = false;
             this.grpLogging.Text = "Logging";
+            // 
+            // txtLogCount
+            // 
+            this.txtLogCount.BackColor = System.Drawing.SystemColors.Window;
+            this.txtLogCount.Location = new System.Drawing.Point(116, 113);
+            this.txtLogCount.Name = "txtLogCount";
+            this.txtLogCount.Size = new System.Drawing.Size(31, 20);
+            this.txtLogCount.TabIndex = 8;
+            this.txtLogCount.TextChanged += new System.EventHandler(this.txtLogCount_TextChanged);
+            // 
+            // lblNoLogging
+            // 
+            this.lblNoLogging.AutoSize = true;
+            this.lblNoLogging.Location = new System.Drawing.Point(6, 116);
+            this.lblNoLogging.Name = "lblNoLogging";
+            this.lblNoLogging.Size = new System.Drawing.Size(93, 13);
+            this.lblNoLogging.TabIndex = 7;
+            this.lblNoLogging.Text = "Number of logging";
+            this.lblNoLogging.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblLogging
             // 
@@ -164,7 +187,7 @@
             this.grpSensor.Controls.Add(this.txtSensor);
             this.grpSensor.Location = new System.Drawing.Point(287, 49);
             this.grpSensor.Name = "grpSensor";
-            this.grpSensor.Size = new System.Drawing.Size(132, 224);
+            this.grpSensor.Size = new System.Drawing.Size(216, 224);
             this.grpSensor.TabIndex = 5;
             this.grpSensor.TabStop = false;
             this.grpSensor.Text = "Sensor Values";
@@ -175,7 +198,7 @@
             this.txtSensor.Location = new System.Drawing.Point(6, 19);
             this.txtSensor.Multiline = true;
             this.txtSensor.Name = "txtSensor";
-            this.txtSensor.Size = new System.Drawing.Size(120, 194);
+            this.txtSensor.Size = new System.Drawing.Size(204, 194);
             this.txtSensor.TabIndex = 0;
             this.txtSensor.TextChanged += new System.EventHandler(this.txtSensor_TextChanged);
             // 
@@ -191,7 +214,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 327);
+            this.ClientSize = new System.Drawing.Size(520, 327);
             this.Controls.Add(this.grpSensor);
             this.Controls.Add(this.grpLogging);
             this.Controls.Add(this.grpSampling);
@@ -232,6 +255,8 @@
         private System.Windows.Forms.TextBox txtSensor;
         private System.Windows.Forms.Timer tmrSampling;
         private System.Windows.Forms.Timer tmrLogging;
+        private System.Windows.Forms.Label lblNoLogging;
+        private System.Windows.Forms.TextBox txtLogCount;
     }
 }
 

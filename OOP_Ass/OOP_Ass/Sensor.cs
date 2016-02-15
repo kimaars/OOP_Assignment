@@ -19,9 +19,16 @@ namespace OOP_Ass
             dVal = 0.0;
         }
 
-        public double GetValue()
+        public double GetValue(bool digital)
         {
-            dVal += rSenVal.NextDouble();
+            if (digital == true)
+            {
+                dVal = rSenVal.Next(0, 2);
+            }
+            else
+            {
+                dVal = rSenVal.NextDouble();
+            }
             return dVal;
         }
 
