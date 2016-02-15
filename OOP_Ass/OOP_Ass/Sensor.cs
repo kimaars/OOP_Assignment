@@ -16,7 +16,7 @@ namespace OOP_Ass
         {
             sId = id;
             rSenVal = new Random(id);
-            dVal = 0.0F;
+            dVal = 0.0;
         }
 
         public double GetValue()

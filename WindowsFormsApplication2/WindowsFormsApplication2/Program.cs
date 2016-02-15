@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OOP_Ass
+namespace WindowsFormsApplication2
 {
     static class Program
     {
@@ -17,8 +17,6 @@ namespace OOP_Ass
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
-
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSampling = new System.Windows.Forms.TextBox();
             this.mnuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,13 +36,15 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSampling = new System.Windows.Forms.Button();
             this.grpSampling = new System.Windows.Forms.GroupBox();
+            this.lblSampling = new System.Windows.Forms.Label();
             this.grpLogging = new System.Windows.Forms.GroupBox();
+            this.lblLogging = new System.Windows.Forms.Label();
             this.btnLogging = new System.Windows.Forms.Button();
             this.txtLogging = new System.Windows.Forms.TextBox();
-            this.lblSampling = new System.Windows.Forms.Label();
-            this.lblLogging = new System.Windows.Forms.Label();
             this.grpSensor = new System.Windows.Forms.GroupBox();
             this.txtSensor = new System.Windows.Forms.TextBox();
+            this.tmrSampling = new System.Windows.Forms.Timer(this.components);
+            this.tmrLogging = new System.Windows.Forms.Timer(this.components);
             this.mnuStrip.SuspendLayout();
             this.grpSampling.SuspendLayout();
             this.grpLogging.SuspendLayout();
@@ -109,6 +112,15 @@
             this.grpSampling.Text = "Sampling";
             this.grpSampling.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lblSampling
+            // 
+            this.lblSampling.AutoSize = true;
+            this.lblSampling.Location = new System.Drawing.Point(6, 38);
+            this.lblSampling.Name = "lblSampling";
+            this.lblSampling.Size = new System.Drawing.Size(101, 13);
+            this.lblSampling.TabIndex = 5;
+            this.lblSampling.Text = "Next Sampling Time";
+            // 
             // grpLogging
             // 
             this.grpLogging.Controls.Add(this.lblLogging);
@@ -120,6 +132,15 @@
             this.grpLogging.TabIndex = 4;
             this.grpLogging.TabStop = false;
             this.grpLogging.Text = "Logging";
+            // 
+            // lblLogging
+            // 
+            this.lblLogging.AutoSize = true;
+            this.lblLogging.Location = new System.Drawing.Point(6, 34);
+            this.lblLogging.Name = "lblLogging";
+            this.lblLogging.Size = new System.Drawing.Size(96, 13);
+            this.lblLogging.TabIndex = 6;
+            this.lblLogging.Text = "Next Logging Time";
             // 
             // btnLogging
             // 
@@ -137,24 +158,6 @@
             this.txtLogging.Name = "txtLogging";
             this.txtLogging.Size = new System.Drawing.Size(100, 20);
             this.txtLogging.TabIndex = 0;
-            // 
-            // lblSampling
-            // 
-            this.lblSampling.AutoSize = true;
-            this.lblSampling.Location = new System.Drawing.Point(6, 38);
-            this.lblSampling.Name = "lblSampling";
-            this.lblSampling.Size = new System.Drawing.Size(101, 13);
-            this.lblSampling.TabIndex = 5;
-            this.lblSampling.Text = "Next Sampling Time";
-            // 
-            // lblLogging
-            // 
-            this.lblLogging.AutoSize = true;
-            this.lblLogging.Location = new System.Drawing.Point(6, 34);
-            this.lblLogging.Name = "lblLogging";
-            this.lblLogging.Size = new System.Drawing.Size(96, 13);
-            this.lblLogging.TabIndex = 6;
-            this.lblLogging.Text = "Next Logging Time";
             // 
             // grpSensor
             // 
@@ -175,6 +178,14 @@
             this.txtSensor.Size = new System.Drawing.Size(120, 194);
             this.txtSensor.TabIndex = 0;
             this.txtSensor.TextChanged += new System.EventHandler(this.txtSensor_TextChanged);
+            // 
+            // tmrSampling
+            // 
+            this.tmrSampling.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tmrLogging
+            // 
+            this.tmrLogging.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
@@ -219,6 +230,8 @@
         private System.Windows.Forms.TextBox txtLogging;
         private System.Windows.Forms.GroupBox grpSensor;
         private System.Windows.Forms.TextBox txtSensor;
+        private System.Windows.Forms.Timer tmrSampling;
+        private System.Windows.Forms.Timer tmrLogging;
     }
 }
 
