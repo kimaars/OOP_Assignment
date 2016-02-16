@@ -96,13 +96,15 @@ namespace OOP_Ass
                 txtSampling.Text = "Next Sample" ;
                 for (int i = 0; i < senAnalog; i++)
                 {
-                    value = sObj[i].GetValue(false).ToString("F3");
+                    value = sObj[i].GetValue(false).ToString("F6");
                     value = value.Replace(",", ".");
-                    sTxt += sObj[i].GetSenId().ToString() +"," + value +","+time+","+"Analog"+"\r\n";
+                    sTxt += sObj[i].GetSenId().ToString() +","+"\t" + value +","+"\t"+time+"," + "\t" + "Analog"+"\r\n";
                 }
                 for (int j = senAnalog; j < senAnalog+senDigital; j++)
                 {
-                    sTxt += sObj[j].GetSenId().ToString() + "," + sObj[j].GetValue(true).ToString("F3") + "," + time +"," + "Digital"+"\r\n";
+                    value = sObj[j].GetValue(true).ToString("F3");
+                    value = value.Replace(",", ".");
+                    sTxt += sObj[j].GetSenId().ToString() + "," + "\t" + value + "," +"\t" + "\t" + time +","+"\t"+ "Digital" +"\r\n";
                 }
 
                 txtSensor.Text = sTxt;

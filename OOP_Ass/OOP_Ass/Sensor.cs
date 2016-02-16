@@ -11,6 +11,7 @@ namespace OOP_Ass
         double dVal;
         int sId;
         Random rSenVal;
+        int maxSenRange = 1;
 
         public Sensor(int id)
         {
@@ -27,7 +28,7 @@ namespace OOP_Ass
             }
             else
             {
-                dVal = rSenVal.NextDouble();
+                dVal = rSenVal.NextDouble()*maxSenRange;
             }
             return dVal;
         }
